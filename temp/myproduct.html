@@ -1,0 +1,29 @@
+{% extends 'nav.html' %}
+
+{% block title %}Titile{% endblock title %}Titile
+{% block body %}
+<form action="product" method="post">    
+    {% csrf_token %}
+<b>Seach the Product by length of it:</b>
+<input type="text" name="dim1" id="dim1"><br>
+
+<b>search the Product by Diameter of it:
+<input type="text" name="dim2" id="dim2">
+<button style="border-radius:102px;" type="submit" class="btn btn-primary">submit</button>
+</form>
+
+
+
+<p>We have a Product like this:
+    {% for cal in  sal %}
+
+<p>
+
+    <b>Product by length</b>
+The length is {{cal.botlength}}<br>
+the type is {{cal.bottype}}<br>
+the diameter is{{cal.botdiameter}}<br>
+{% endfor %}
+
+
+{% endblock body %}

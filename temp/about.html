@@ -1,0 +1,27 @@
+{% extends 'nav.html' %}
+
+{% block body %}
+<div class="post-thumbnail">
+  {% csrf_token %}
+  <h1>The blog are shown as </h1>
+    {%for myeachblog in la%}
+   
+
+    <div class="container">
+      <div class="jumbotron" >
+        <h3 class="display-4"><h2> {{myeachblog.title}}<h2></h3>
+        <p class="lead"> The author is {{myeachblog.name}}</p>
+        <hr class="my-4">
+        <p>{{myeachblog.content |truncatechars:100}} <br></p>
+        <a class="btn btn-primary btn-lg" href="/shop/{{myeachblog.slu}}" role="button">Read more</a>
+      </div>
+    </div>
+  
+    {% endfor %}
+   <img width="1200" height="600" src="https://dpbnri2zg3lc2.cloudfront.net/en/wp-content/uploads/2021/01/beautifu_blogs.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="An open laptop and a coffee cup on a table" loading="eager" srcset="https://dpbnri2zg3lc2.cloudfront.net/en/wp-content/uploads/2021/01/beautifu_blogs.jpg 1200w, https://dpbnri2zg3lc2.cloudfront.net/en/wp-content/uploads/2021/01/beautifu_blogs-300x150.jpg 300w, https://dpbnri2zg3lc2.cloudfront.net/en/wp-content/uploads/2021/01/beautifu_blogs-1024x512.jpg 1024w, https://dpbnri2zg3lc2.cloudfront.net/en/wp-content/uploads/2021/01/beautifu_blogs-768x384.jpg 768w" sizes="(max-width: 1200px) 100vw, 1200px" title="beautifu blogs" data-pagespeed-url-hash="3495738268" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+  </div>
+
+</div>
+
+
+{% endblock body %}

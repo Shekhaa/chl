@@ -1,0 +1,70 @@
+{% extends 'nav.html' %}
+
+{% block title %}title{% endblock title %}title
+
+{% block body%}
+<div style="background-color:SlateBlue;" class="jumbotron">
+  <h1 class="display-4">Welcome to My blog</h1>
+  <p class="lead">this is a simple TEch blog</p>
+  <hr class="my-4">
+  <p>WElcome to my blogging website.</p>
+  <a class="btn btn-primary btn-lg" href="about" role="button">Go to blog</a>
+</div>
+
+  <div class="container">
+      <form action="home" method="post">
+       
+
+        {% csrf_token %}
+        <div style="height: 124px; width:150px;" class="form-group">
+          <label  for="title"><h3>Write Your blog title</h3></label> 
+          <input type="text" class="form-control" id="title"name="a">
+        </div>
+        <label><h3>Write your content</h3></label><br>
+       <textarea style="height: 124px; width:1000px;" name="b" ></textarea><br>
+       
+       <label><h3>Write the url</h3></label><br>
+       <textarea style="height: 30px; width:100px;" name="d" ></textarea>
+
+        <div style="height: 124px; width:150px"; class="form-group">
+          <label for="name"><h3>The author name</h3> </label>
+          <input type="text" class="form-control" id="name" name="c">
+        </div>
+        <button style="border-radius:102px;" type="submit" class="btn btn-primary">submit<button>
+      </form>
+  </div>
+
+
+
+
+ <div class="container">
+    <form action="calc" method="post">
+     
+
+      {% csrf_token %}
+      <div style="height: 214px; width:150px;" class="form-group">
+        <label  for="cgl"><h3>Choose dimensions</h3></label>
+        <input type="text" class="form-control" id="cgl" name="di1">
+      </div>
+
+      <div style="height: 214px; width:150px;" class="form-group">
+        <input type="text" class="form-control" name="di2">
+      </div>
+      <button style="border-radius:102px;" type="submit" class="btn btn-primary">submit</button>
+    </form>
+</div>
+
+
+
+<div class="container">
+  <div class="jumbotron" >
+    <h3 class="display-4"><h2> {{s}}<h2></h3>
+    
+    <hr class="my-2">
+    
+    
+  </div>
+</div>
+
+
+{% endblock body %}
